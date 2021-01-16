@@ -1,0 +1,82 @@
+:host {
+  height: 30%;
+  margin: 15px;
+  display: flex;
+  flex: 0 1 calc(15% - 8px);
+  font-family: Oswald-Regular;
+}
+
+.profile-card {
+  background-color: whitesmoke;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid darkred;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  box-shadow: 0px 0px 8px 0px;
+
+  &-details {
+    display: flex;
+    height: 25%;
+
+    img {
+      width: 40px;
+      height: auto;
+      object-fit: contain;
+      margin: 2px;
+      border-radius: 5px;
+    }
+
+    &-name {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      font-size: 12px;
+    }
+  }
+
+  &-count {
+    height: 50%;
+    display: flex;
+    font-size: 10px;
+
+    &-price, &-bet {
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 5px;
+    }
+  }
+
+  &-status {
+    height: 10%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    display: flex;
+    background-color: darkred;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: -2px;
+    width: 70%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 10px;
+    color: white;
+
+    &.win {
+      background-color: #118e16;
+    }
+  }
+  &.win {
+    transform: scaleY(1.1);
+    border:2px solid #118e16;
+  }
+}

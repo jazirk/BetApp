@@ -1,0 +1,97 @@
+@import "src/assets/themes/mixins";
+@mixin table-cell($map...) {
+    $i: 1;
+    @each $size in $map {
+      tbody {
+        td:nth-child(#{$i}) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-basis: $size;
+          margin: 2px;
+        }
+      }
+      th:nth-child(#{$i}) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: $size;
+        margin: 2px;
+      }
+      $i: $i+1;
+    }
+  }
+table {
+  @include flex-box(nowrap, stretch, stretch);
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  @include table-cell(10%, 55%, 10%, 10%, 10%);
+
+  .align-left {
+    justify-content: flex-start !important;
+  }
+
+  tr {
+    width: 100%;
+    @include flex-box(nowrap, stretch, stretch);
+  }
+
+  tbody {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 65%;
+    tr{
+      height: 10%;
+      border-bottom: 1px solid #f3f3f3;
+    }
+  }
+
+  td {
+    flex-grow: 1;
+    padding: 16px 10px;
+    flex-shrink: 0;
+    .profile-image {
+      width: 25px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+
+    &.disabled {
+
+    }
+  }
+}
+
+
+thead {
+  @include flex-box(nowrap, stretch, stretch);
+  ::ng-deep th {
+    padding: 16px 10px;
+    flex-shrink: 0;
+    background-color: #f3f3f3;
+    flex-grow: 1;
+
+    img {
+      width: 15px;
+      height: auto;
+      margin-right: 5px;
+    }
+  }
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  align-items: center;
+}

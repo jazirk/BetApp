@@ -1,0 +1,28 @@
+<h1>Playing 9</h1>
+<section class="player-list">
+  <div class="player-list-card" *ngFor="let player of selectedPlayers">
+    <div class="player-list-card-left">
+    <div class="player-list-card-left-image">
+      <img [src]="player['Profile Image']">
+    </div>
+    <div class="player-list-card-left-details">
+      <div class="player-list-card-left-name">
+        {{player?.Name}}
+      </div>
+      <div class="player-list-card-left-bet">
+<!--        <div>{{player?.}}</div>-->
+        <img class="player-icon" [src]="imageMap['bet']">{{player?.Bet}}
+      </div>
+    </div>
+    </div>
+    <div class="player-list-card-right">
+    <div class="player-list-card-right-price">
+      <img class="player-icon" [src]="imageMap['price']">
+      {{player?.Price}}
+    </div>
+    </div>
+  </div>
+</section>
+<div class="button">
+  <button (click)="startGame()" [class.disabled]="selectedPlayers?.length !==9" [disabled]="selectedPlayers?.length !==9" >START</button>
+</div>

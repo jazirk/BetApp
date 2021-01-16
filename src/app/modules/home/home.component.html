@@ -1,0 +1,17 @@
+<main>
+  <header>
+    <div class="bet-icon pad-10">
+      <img src="../../assets/icons/dice.svg">
+    </div>
+    <div class="bet-title pad-10">
+      <h1 class="bet-title-heading">Select Playing 9</h1>
+      <div class="bet-search">
+        <input #search type="text" placeholder="Search Players">
+      </div>
+    </div>
+  </header>
+  <section class="bet-content">
+    <app-selected-list [selectedPlayers]="selectedPlayers" class="pad-10"></app-selected-list>
+    <app-player-list (selectEmitter)="playerSelectAction($event)" [playersList]="players" class="pad-10"></app-player-list>
+  </section>
+</main>

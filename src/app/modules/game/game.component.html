@@ -1,0 +1,5 @@
+<section>
+  <app-profile [randomNumber]="randomNumber" [player]="player" *ngFor="let player of selectedPlayers"></app-profile>
+</section>
+<div class="bet-number">{{randomNumber}}</div>
+<button (click)="goBack()" class="back-button">BACK</button>

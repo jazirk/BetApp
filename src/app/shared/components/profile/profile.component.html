@@ -1,0 +1,16 @@
+<div [class.win] = "isWinner" class="profile-card">
+  <div class="profile-card-details">
+    <img [src]="player['Profile Image']">
+    <div class="profile-card-details-name">
+      <div>{{player?.Name}}</div>
+    </div>
+  </div>
+  <div class="profile-card-count">
+    <div class="profile-card-count-price">
+      <img class="player-icon" [src]="imageMap['price']">
+      {{player?.Price}}
+    </div>
+    <div class="profile-card-count-bet"><img class="player-icon" [src]="imageMap['bet']">{{player?.Bet}}</div>
+  </div>
+  <div [class.win] = "isWinner" class="profile-card-status">{{isWinner ? 'WINNER' : 'LOSE'}}</div>
+</div>
